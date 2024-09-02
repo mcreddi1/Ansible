@@ -1,6 +1,6 @@
 - name: Varibles to print
   hosts: web
-  vars:
+  vars: #play level variables can be applied to all the tasks below
     course: "devops with aws"
     duration: "120 hrs"
     trainer: "siva kumar reddy m"
