@@ -5,3 +5,11 @@
     ansible.builtin.package:
       name: nginx
       state: installed
+
+- name: run the nginx
+  hosts: web
+  tasks:
+  - name: start the nginx
+    ansible.builtin.service:
+      name: nginx
+      state: started
