@@ -1,4 +1,4 @@
-#if we  want to pass variables through arguments use "-e"
+#if we  want to pass variables through arguments use -e "course=devops duration=120 hrs"
 
 - name: variables from arguments
   hosts: web
