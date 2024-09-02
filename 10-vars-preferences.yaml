@@ -1,0 +1,15 @@
+- name: Printing variable preferrences
+  hosts: web
+  vars:
+    course: "devops"
+  vars_prompt:
+  - name: course
+  vars_file:
+  - vars.yaml
+  tasks:
+
+  - name: print the variable preferrence
+    vars:
+      course: "devops"
+    ansible.builtin.debug:
+      msg: "i am learinig the {{course}}"
