@@ -4,7 +4,7 @@
     course: "devops"
   vars_prompt:
   - name: course
-  vars_file:
+  vars_files:
   - vars.yaml
   tasks:
 
