@@ -29,12 +29,12 @@
 
   - name: Add new.foo.com as an A record with 3 IPs and wait until the changes have been replicated
     amazon.aws.route53:
-    state: present
-    zone: "{{ zone }}"
-    record: "{{ item.item }}.{{ zone }}"
-    type: A
-    ttl: 1
-    value: "{{ item.instances[0].private_ip_address }}"
-    wait: true
-    overwrite: true
+      state: present
+      zone: "{{ zone }}"
+      record: "{{ item.item }}.{{ zone }}"
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].private_ip_address }}"
+      wait: true
+      overwrite: true
     loop: "{{ ec2_instaces.results }}"
