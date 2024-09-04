@@ -9,6 +9,7 @@
     - mysql
     - backend
     - frontend
+    zone: devops81s.shop
   tasks:
   - name: create ec2 instance
     amazon.aws.ec2_instance:
@@ -20,6 +21,20 @@
       image_id: "{{ ami }}"
     loop: "{{ instances }}"
     register: ec2_instances
+
+
   - name: print the output
     ansible.builtin.debug:
       msg: "{{ ec2_instances }}"
+
+  - name: Add new.foo.com as an A record with 3 IPs and wait until the changes have been replicated
+    amazon.aws.route53:
+    state: present
+    zone: "{{ zone }}"
+    record: "{{ item.item }}.{{ zone }}"
+    type: A
+    ttl: 1
+    value: "{{ item.instances[0].private_ip_address }}"
+    wait: true
+    overwrite: true
+  loop: "{{ ec2_instaces.results }}"
