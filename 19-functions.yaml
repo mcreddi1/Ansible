@@ -1,0 +1,7 @@
+- name: using the functions/filters
+  hosts: local
+  connection: local
+  tasks:
+  - name: pront the default variables
+    ansible.builtin.debug:
+      msg: " {{ course | default('ansible') }} "
