@@ -23,3 +23,18 @@
       numbers: [1,2,3,5,6,8,6,5,5,2,3,6,1,43]
     ansible.builtin.debug:
       msg: "{{ numbers | unique }}"
+
+  - name: getting min and max values form list of numbers
+    vars:
+      numbers: [1,2,5,48,6,3,79,,6,2,8,62,,3]
+    ansible.builtin.debug:
+      msg: " MIN: {{ numbers | min }}, MAX: {{ numbers | max }}"
+
+  - name: converting the dictionary to lists
+    vars:
+      course:
+        name: "devops with AWS"
+        duration: "120 hrs"
+        trainer: "siva"
+    ansible.builtin.debug:
+      msg: "{{ course | dict2lists }}"
