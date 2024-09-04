@@ -12,11 +12,11 @@
   tasks:
   - name: create ec2 instance
     amazon.aws.ec2_instance:
-    name: "{{ item }}" 
+      name: "{{ item }}" 
     #when we use loop for creating 3 instances, loop will look for each item in loop instances and create
-    vpc_subnet_id: "{{ subnet_id }}"
-    instance_type: "t2.micro"
-    security_group: "{{ sg_id }}"
-    image_id: "{{ ami }}"
-  loop: "{{ instances }}"
-  register: ec2-instances
+      vpc_subnet_id: "{{ subnet_id }}"
+      instance_type: "t2.micro"
+      security_group: "{{ sg_id }}"
+      image_id: "{{ ami }}"
+    loop: "{{ instances }}"
+    register: ec2-instances
