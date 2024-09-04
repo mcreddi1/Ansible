@@ -37,4 +37,4 @@
         duration: "120 hrs"
         trainer: "siva"
     ansible.builtin.debug:
-      msg: "{{ course | dict2lists }}"
+      msg: "{{ course | dict2items }}"
