@@ -4,4 +4,4 @@
   tasks:
   - name: pront the default variables
     ansible.builtin.debug:
-      msg: " {{ course | default('ansible') }} "
+      msg: " hello {{ course | default('ansible') }} "
