@@ -7,11 +7,11 @@
     # command module, just issues the command
 
   - name: check the process
-    ansible.builtin.shell: ps -ef | grep sshd
+    ansible.builtin.shell: ps -ef | grep sshd #shell command login into the system and run as shell
     register: output
 
   - name: check the process
-    ansible.builtin.shell: ps -ef | grep sshd
+    ansible.builtin.command: ps -ef | grep sshd #command will not get the shell environment
     register: output
   - name:
     ansible.builtin.debug:

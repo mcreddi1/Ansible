@@ -1,0 +1,5 @@
+- name: creating ec2 and R53 records
+  hosts: local
+  connection: local
+  tasks:
+  - name: create ec2 instance
