@@ -5,3 +5,15 @@
   - name: pront the default variables
     ansible.builtin.debug:
       msg: " hello {{ course | default('ansible') }} "
+
+  - name: converting to uppercase
+    vars:
+      greetings: "Hello Ramesh"
+    ansible.biultin.debug:
+      msg: "{{ greetings | upper }}"
+
+  - name: converting to lowercase
+    vars:
+      greetings: "Hello Ramesh"
+    ansible.biultin.debug:
+      msg: "{{ greetings | lower }}"
