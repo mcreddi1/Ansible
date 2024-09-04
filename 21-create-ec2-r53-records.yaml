@@ -19,4 +19,4 @@
       security_group: "{{ sg_id }}"
       image_id: "{{ ami }}"
     loop: "{{ instances }}"
-    register: output
+    register: ec2_instances
