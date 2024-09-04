@@ -11,5 +11,5 @@
     register: output
 
   - name: check the process
-    ansible.builtin.command: ps -ef | grep sshd
+    ansible.builtin.shell: ps -ef | grep sshd
     register: output
