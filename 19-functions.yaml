@@ -47,3 +47,9 @@
       - { key: trainer, value: siva }
     ansible.builtin.debug:
       msg: "{{ course | items2dict }}"
+      
+  - name: check IP address
+    vars:
+      myip: "152.142.13.10"
+    ansible.builtin.debug:
+      msg: "{{ myip | ansible.utils.ipv4 }}"
