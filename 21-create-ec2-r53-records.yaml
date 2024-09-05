@@ -13,9 +13,10 @@
 
   - name: installing pip3.9 module
     ansible.builtin.pip:
-    - boto 3
-    - botocore
-    
+      name:
+      - boto 3
+      - botocore
+      executable: pip3.9
   tasks:
   - name: create ec2 instance
     amazon.aws.ec2_instance:
